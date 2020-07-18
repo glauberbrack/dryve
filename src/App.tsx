@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GlobalStyles from './styles/global';
-import { ContainerFull, MainContent } from './styles/appStyles';
+import { ContainerFull, Content, MainContent } from './styles/appStyles';
 
 import MenuLeft from './components/MenuLeft';
 import MenuTop from './components/MenuTop';
@@ -16,13 +16,15 @@ const App: React.FC = () => {
 
       <ContainerFull>
         <MenuLeft />
-        <MainContent>
+        <Content>
           <MenuTop />
-          {/* Routing system */}
-          <Routes />
-          {/* Routing system */}
+          <MainContent>
+            {/* Routing system */}
+            <Routes />
+            {/* Routing system */}
+          </MainContent>
           <Footer />
-        </MainContent>
+        </Content>
       </ContainerFull>
     </>
   );
