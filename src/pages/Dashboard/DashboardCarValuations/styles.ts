@@ -67,6 +67,23 @@ export const CarContent = styled.div`
   flex-direction: column;
   height: 465px;
   overflow-x: hidden;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 140px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #eeeeee;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d3d3d3;
+  }
 `;
 
 export const CardItemContainer = styled.div`
