@@ -63,8 +63,10 @@ export const TableSeparator = styled.span`
 
 export const CarContent = styled.div`
   padding: 15px 20px;
-  height: 470px;
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 465px;
+  overflow-x: hidden;
 `;
 
 export const CardItemContainer = styled.div`

@@ -29,6 +29,12 @@ import arrowMore from '../../../assets/icons/arrow-more.svg';
 import chevrolet from '../../../assets/brands/chevrolet.png';
 
 const DashboardCarValuations: React.FC = () => {
+  const formatValue = (value: number) =>
+    new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(value);
+
   const [cars, setCars] = useState<ICar[]>([]);
 
   useEffect(() => {
@@ -53,35 +59,43 @@ const DashboardCarValuations: React.FC = () => {
         </TopContent>
 
         <TableTopContent>
-          <TableTopText style={{ width: '45%' }}>Dados do veículo</TableTopText>
-          <TableTopText style={{ width: '25%' }}>Valor</TableTopText>
-          <TableTopText>Status</TableTopText>
+          <TableTopText style={{ width: '30%' }}>Dados do veículo</TableTopText>
+          <TableTopText style={{ width: '15%' }}>Valor</TableTopText>
+          <TableTopText style={{ width: '25%' }}>Status</TableTopText>
         </TableTopContent>
       </Header>
       <TableSeparator />
       <CarContent>
         {cars.map(car => (
-          <CardItemContainer key={car.vehicleUuid}>
+          <CardItemContainer key={car.vehicle_uuid}>
             <CarItem>
               <CarItemLeft>
                 <img src={car.image} alt="Veículo" />
                 <CardItemLeftDetails>
-                  <h1>JEEP COMPASS</h1>
+                  <h1>{car.model_name}</h1>
                   <span>GDL8019</span>
                   <span>
-                    {car.model_year}-{car.fuelType}
+                    {car.model_year}
+                    {' - '}
+                    {car.fuel_type}
                   </span>
                   <span>
-{' '}
-{car.transmissionType}- 70.972 km</span>
+                    {car.transmission_type}
+                    {' - '}
+                    {car.mileage} km
+                  </span>
                 </CardItemLeftDetails>
               </CarItemLeft>
 
               <CarItemMiddle>
                 <span>Anúncio</span>
-                <span className="ad-value">R$ 115.560</span>
+                <span className="ad-value">
+                  {formatValue(car.ad_selling_price)}
+                </span>
                 <span>Mínimo aceito</span>
-                <span className="min-value">R$ 115.560</span>
+                <span className="min-value">
+                  {formatValue(car.ad_selling_price)}
+                </span>
               </CarItemMiddle>
 
               <CarItemRight>
