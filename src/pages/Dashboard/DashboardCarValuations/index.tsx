@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { ICar } from '../../../utils/interfaces/ICar';
+import { API_PROD } from '../../../services/api';
 
 import {
   Container,
@@ -10,6 +13,7 @@ import {
   TableTopText,
   TableSeparator,
   CarContent,
+  CardItemContainer,
   CarItem,
   CarItemLeft,
   CardItemLeftDetails,
@@ -25,6 +29,17 @@ import arrowMore from '../../../assets/icons/arrow-more.svg';
 import chevrolet from '../../../assets/brands/chevrolet.png';
 
 const DashboardCarValuations: React.FC = () => {
+  const [cars, setCars] = useState<ICar[]>([]);
+
+  useEffect(() => {
+    async function getCars(): Promise<void> {
+      axios.get(API_PROD).then(response => {
+        const { data } = response;
+        setCars(data);
+      });
+    }
+    getCars();
+  }, []);
   return (
     <Container>
       <Header>
@@ -45,33 +60,42 @@ const DashboardCarValuations: React.FC = () => {
       </Header>
       <TableSeparator />
       <CarContent>
-        <CarItem>
-          <CarItemLeft>
-            <img src={chevrolet} alt="Veículo" />
-            <CardItemLeftDetails>
-              <h1>JEEP COMPASS</h1>
-              <span>GDL8019</span>
-              <span>2018 - DIESEL</span>
-              <span> automático - 70.972 km</span>
-            </CardItemLeftDetails>
-          </CarItemLeft>
+        {cars.map(car => (
+          <CardItemContainer key={car.vehicleUuid}>
+            <CarItem>
+              <CarItemLeft>
+                <img src={car.image} alt="Veículo" />
+                <CardItemLeftDetails>
+                  <h1>JEEP COMPASS</h1>
+                  <span>GDL8019</span>
+                  <span>
+                    {car.model_year}-{car.fuelType}
+                  </span>
+                  <span>
+{' '}
+{car.transmissionType}- 70.972 km</span>
+                </CardItemLeftDetails>
+              </CarItemLeft>
 
-          <CarItemMiddle>
-            <span>Anúncio</span>
-            <span className="ad-value">R$ 115.560</span>
-            <span>Mínimo aceito</span>
-            <span className="min-value">R$ 115.560</span>
-          </CarItemMiddle>
+              <CarItemMiddle>
+                <span>Anúncio</span>
+                <span className="ad-value">R$ 115.560</span>
+                <span>Mínimo aceito</span>
+                <span className="min-value">R$ 115.560</span>
+              </CarItemMiddle>
 
-          <CarItemRight>
-            <StatusBarRight>
-              <span>Aguardando precificação</span>
-            </StatusBarRight>
-            <DatetimeRight>
-              <span>18/04/2020 às 14:35</span>
-            </DatetimeRight>
-          </CarItemRight>
-        </CarItem>
+              <CarItemRight>
+                <StatusBarRight>
+                  <span>Aguardando precificação</span>
+                </StatusBarRight>
+                <DatetimeRight>
+                  <span>18/04/2020 às 14:35</span>
+                </DatetimeRight>
+              </CarItemRight>
+            </CarItem>
+            <hr />
+          </CardItemContainer>
+        ))}
       </CarContent>
       <TableSeparator />
       <Footer>
@@ -83,3 +107,36 @@ const DashboardCarValuations: React.FC = () => {
 };
 
 export default DashboardCarValuations;
+
+{
+  /* <CardItemContainer>
+          <CarItem>
+            <CarItemLeft>
+              <img src={chevrolet} alt="Veículo" />
+              <CardItemLeftDetails>
+                <h1>JEEP COMPASS</h1>
+                <span>GDL8019</span>
+                <span>2018 - DIESEL</span>
+                <span> automático - 70.972 km</span>
+              </CardItemLeftDetails>
+            </CarItemLeft>
+
+            <CarItemMiddle>
+              <span>Anúncio</span>
+              <span className="ad-value">R$ 115.560</span>
+              <span>Mínimo aceito</span>
+              <span className="min-value">R$ 115.560</span>
+            </CarItemMiddle>
+
+            <CarItemRight>
+              <StatusBarRight>
+                <span>Aguardando precificação</span>
+              </StatusBarRight>
+              <DatetimeRight>
+                <span>18/04/2020 às 14:35</span>
+              </DatetimeRight>
+            </CarItemRight>
+          </CarItem>
+          <hr />
+        </CardItemContainer> */
+}

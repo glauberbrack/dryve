@@ -1,18 +1,19 @@
+/* eslint-disable camelcase */
 export interface ICar {
-  evaluationType: string;
-  versionUuid: string;
+  evaluation_type: string;
+  version_uuid: string;
   mileage: number;
-  modelYear: number;
+  model_year: number;
   name: string;
-  transmissionType: string;
-  fuelType: string;
-  vehicleUuid: string;
-  modelName: string;
-  manufacturingYear: number;
-  versionName: string;
+  transmission_type: string;
+  fuel_type: string;
+  vehicle_uuid: string;
+  model_name: string;
+  manufacturing_year: number;
+  version_name: string;
   image: string;
-  brandName: string;
-  adSellingPrice: number;
-  modelUuid: string;
-  brandUuid: string;
+  brand_name: string;
+  ad_selling_price: number;
+  model_uuid: string;
+  brand_uuid: string;
 }

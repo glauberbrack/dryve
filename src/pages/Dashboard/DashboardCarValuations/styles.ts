@@ -67,6 +67,19 @@ export const CarContent = styled.div`
   overflow: scroll;
 `;
 
+export const CardItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    margin: 10px 0;
+    border-radius: 4px;
+    width: 100%;
+    border: solid 0.5px rgba(0, 0, 0, 0.12);
+    margin-top: 14px;
+  }
+`;
+
 export const CarItem = styled.div`
   display: flex;
   flex-direction: row;
