@@ -1,12 +1,10 @@
 import styled from 'styled-components';
+import Card from '../../../components/Card';
 
-export const Container = styled.div`
+export const Container = styled(Card)`
   width: 387px;
   height: 110px;
-  border-radius: 4px;
-  border: solid 1px rgba(0, 0, 0, 0.12);
-  background: #ffffff;
-  padding-left: 20px;
+  padding: 0 0 0 20px;
 
   h2 {
     margin-top: 15px;

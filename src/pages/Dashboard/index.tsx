@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { Container, Cards } from './styles';
+import {
+  Container,
+  Cards,
+  Content,
+  LeftContent,
+  RightContent,
+  RightTopContent,
+  RightBottomContent,
+} from './styles';
 
 import DashboardCard from './DashboardCard';
 
@@ -40,7 +48,13 @@ const Dashboard: React.FC = () => {
           percentageText="este mês"
         />
       </Cards>
-      <h1>Dashboard</h1>
+      <Content>
+        <LeftContent />
+        <RightContent>
+          <RightTopContent />
+          <RightBottomContent />
+        </RightContent>
+      </Content>
     </Container>
   );
 };
