@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 import DashboardCard from './DashboardCard';
+import DashboardCarValuations from './DashboardCarValuations';
 import DashboardTopIntentions from './DashboardTopIntentions';
 
 import imgCar from '../../assets/icons/car-selected.svg';
@@ -50,7 +51,9 @@ const Dashboard: React.FC = () => {
         />
       </Cards>
       <Content>
-        <LeftContent />
+        <LeftContent>
+          <DashboardCarValuations />
+        </LeftContent>
         <RightContent>
           <RightTopContent>
             <DashboardTopIntentions />

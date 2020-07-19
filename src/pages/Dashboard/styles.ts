@@ -19,6 +19,7 @@ export const Content = styled.div`
 `;
 
 export const LeftContent = styled(Card)`
+  padding: 0;
   width: 794px;
   height: 640px;
 `;
