@@ -5,7 +5,7 @@
 
 
 <h1 align="center">
-    <img alt="dryve" title="#dryve" src=".github/app.gif" width="720px" />
+    <img alt="dryve" title="#dryve" src=".github/dashboard.gif" width="720px" />
 </h1>
 
 
