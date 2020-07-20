@@ -30,6 +30,7 @@ export const Title = styled.h1`
 `;
 
 export const Content = styled.div`
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
 `;
