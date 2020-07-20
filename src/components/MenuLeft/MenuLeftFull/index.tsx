@@ -46,15 +46,19 @@ const MenuLeft: React.FC = () => {
       </TopContainer>
 
       <MenuContainer>
-        <MenuItem style={{ background: '#f3f7ff' }}>
-          <Icon src={homeIcon} style={{ opacity: 1 }} />
-          <h1>Início</h1>
-        </MenuItem>
+        <a href="/">
+          <MenuItem style={{ background: '#f3f7ff' }}>
+            <Icon src={homeIcon} style={{ opacity: 1 }} />
+            <h1>Início</h1>
+          </MenuItem>
+        </a>
 
-        <MenuItem>
-          <Icon src={personIcon} />
-          <h1>Clientes</h1>
-        </MenuItem>
+        <a href="/clients">
+          <MenuItem>
+            <Icon src={personIcon} />
+            <h1>Clientes</h1>
+          </MenuItem>
+        </a>
 
         <MenuItem>
           <Icon src={carUnselectedIcon} />

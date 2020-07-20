@@ -29,8 +29,12 @@ const MenuLeft: React.FC = () => {
             <AvatarImage src="https://api.adorable.io/avatars/hi_mom" />
           </AvatarContainer>
 
-          <Icon src={homeIcon} style={{ opacity: 1 }} />
-          <Icon src={personIcon} />
+          <a href="/">
+            <Icon src={homeIcon} style={{ opacity: 1 }} />
+          </a>
+          <a href="/clients">
+            <Icon src={personIcon} />
+          </a>
           <Icon src={carUnselectedIcon} />
           <Icon src={triangleIcon} />
           <Icon src={walletIcon} />

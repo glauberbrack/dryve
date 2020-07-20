@@ -8,6 +8,10 @@ export const Container = styled.div`
   height: 970px;
   box-shadow: 1px 0 0 0 #e0e0e0;
   background-color: #fff;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const TopContainer = styled.div`
