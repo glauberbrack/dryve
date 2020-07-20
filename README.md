@@ -3,7 +3,7 @@
     <img alt="dryve" title="#dryve" src=".github/logo.svg" width="250px" />
 </h1>
 
-<img alt="dryve" title="#dryve" src=".github/app.gif" width="720px" />
+<img alt="dryve" title="#dryve" src=".github/app.gif" width="720px" align="center" />
 
 <h4 align="center">
   Dryve | Backoffice
