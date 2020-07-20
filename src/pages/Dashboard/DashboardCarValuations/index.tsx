@@ -60,7 +60,7 @@ const DashboardCarValuations: React.FC = () => {
 
         <TableTopContent>
           <TableTopText style={{ width: '30%' }}>Dados do veículo</TableTopText>
-          <TableTopText style={{ width: '15%' }}>Valor</TableTopText>
+          <TableTopText style={{ width: '10%' }}>Valor</TableTopText>
           <TableTopText style={{ width: '25%' }}>Status</TableTopText>
         </TableTopContent>
       </Header>
@@ -82,8 +82,10 @@ const DashboardCarValuations: React.FC = () => {
                   <span>
                     {car.transmission_type}
                     {' - '}
-                    {car.mileage} km
-                  </span>
+                    {car.mileage}
+{' '}
+km
+</span>
                 </CardItemLeftDetails>
               </CarItemLeft>
 
@@ -121,36 +123,3 @@ const DashboardCarValuations: React.FC = () => {
 };
 
 export default DashboardCarValuations;
-
-{
-  /* <CardItemContainer>
-          <CarItem>
-            <CarItemLeft>
-              <img src={chevrolet} alt="Veículo" />
-              <CardItemLeftDetails>
-                <h1>JEEP COMPASS</h1>
-                <span>GDL8019</span>
-                <span>2018 - DIESEL</span>
-                <span> automático - 70.972 km</span>
-              </CardItemLeftDetails>
-            </CarItemLeft>
-
-            <CarItemMiddle>
-              <span>Anúncio</span>
-              <span className="ad-value">R$ 115.560</span>
-              <span>Mínimo aceito</span>
-              <span className="min-value">R$ 115.560</span>
-            </CarItemMiddle>
-
-            <CarItemRight>
-              <StatusBarRight>
-                <span>Aguardando precificação</span>
-              </StatusBarRight>
-              <DatetimeRight>
-                <span>18/04/2020 às 14:35</span>
-              </DatetimeRight>
-            </CarItemRight>
-          </CarItem>
-          <hr />
-        </CardItemContainer> */
-}

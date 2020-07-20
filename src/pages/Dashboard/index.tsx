@@ -13,6 +13,7 @@ import {
 import DashboardCard from './DashboardCard';
 import DashboardCarValuations from './DashboardCarValuations';
 import DashboardTopIntentions from './DashboardTopIntentions';
+import DashboardPricesGraph from './DashboardPricesGraph';
 
 import imgCar from '../../assets/icons/car-selected.svg';
 import imgDevice from '../../assets/icons/device.svg';
@@ -58,7 +59,9 @@ const Dashboard: React.FC = () => {
           <RightTopContent>
             <DashboardTopIntentions />
           </RightTopContent>
-          <RightBottomContent />
+          <RightBottomContent>
+            <DashboardPricesGraph />
+          </RightBottomContent>
         </RightContent>
       </Content>
     </Container>
