@@ -4,12 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 56px 0 30px;
+  padding: 0 206px 0 30px;
 `;
 
 export const Separator = styled.span`
   border-radius: 4px;
-  width: 100%;
+  max-width: 1200px;
   border: solid 0.5px rgba(0, 0, 0, 0.12);
   margin-top: 14px;
 `;
