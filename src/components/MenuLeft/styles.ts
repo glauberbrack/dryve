@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ContainerProps {
+  clicked: boolean;
+}
 
 export const Container = styled.div`
   display: flex;
@@ -8,8 +12,6 @@ export const Container = styled.div`
   height: 970px;
   box-shadow: 1px 0 0 0 #e0e0e0;
   background-color: #fff;
-  grid-area: leftbar;
-  grid-row: 1/3;
 `;
 
 export const AvatarContainer = styled.div`
